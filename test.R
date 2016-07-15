@@ -3,7 +3,7 @@ library(quantmod)
 library(forecast)
 library(xts)
   
-NoDay <- 365
+NoDay <- 365*5
 
 getQuote("SPY", what=yahooQF("Last Trade (Price Only)"))
 
@@ -14,6 +14,9 @@ AudUsd <- data.frame(Dates = time(AudUsd.temp), Values = as.numeric(AudUsd.temp)
 CnyUsd <- data.frame(Dates = time(CnyUsd.temp), Values = as.numeric(CnyUsd.temp))   
   
 
+
+##
+plot()
 
 ##
 days <- as.factor(weekdays(AudUsd$Dates))
